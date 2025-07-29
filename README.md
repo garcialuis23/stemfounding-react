@@ -133,4 +133,4 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull re
 
 ## Contacto
 
-Para cualquier consulta, puedes contactarme a través de [mi correo electrónico](luisgarcia890.alu@stemgranada.com).
+Para cualquier consulta, puedes contactarme a través de [mi correo electrónico](mailto:garciadiazluis23@gmail.com).
