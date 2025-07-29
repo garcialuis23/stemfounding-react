@@ -14,6 +14,8 @@ const NewProject = () => {
     max_investment: 100,
     limit_date: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,17 +24,24 @@ const NewProject = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    newProject(formData)
-      .then((response) => {
-        console.log(response.data);
-        navigate("/"); // Redirect to projects page after successful creation
-      })
-      .catch((error) => {
-        console.error(error);
-        // Handle error (e.g., show an error message)
-      });
+    setLoading(true);
+    setError("");
+    
+    console.log("Enviando datos:", formData); // Para debug
+    
+    try {
+      const response = await newProject(formData);
+      console.log("Respuesta exitosa:", response.data);
+      navigate("/"); // Redirect to projects page after successful creation
+    } catch (error) {
+      console.error("Error completo:", error);
+      console.error("Error response:", error.response);
+      setError(error.response?.data?.message || error.message || "Error al crear el proyecto");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -42,6 +51,11 @@ const NewProject = () => {
           <div className="card shadow-lg" style={{ borderRadius: "15px", backgroundColor: "#fdf7ee" }}>
             <div className="card-body">
               <h3 className="text-center mb-4" style={{ color: "#4e5d6c" }}>New Project</h3>
+              {error && (
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              )}
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">Título:</label>
@@ -72,7 +86,9 @@ const NewProject = () => {
                   <input type="date" id="limit_date" name="limit_date" className="form-control" value={formData.limit_date} onChange={handleChange} required min={new Date().toISOString().split("T")[0]} />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn btn-primary w-100">Submit</button>
+                  <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+                    {loading ? "Enviando..." : "Submit"}
+                  </button>
                 </div>
               </form>
             </div>
