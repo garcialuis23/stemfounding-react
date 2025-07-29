@@ -134,3 +134,5 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull re
 ## Contacto
 
 Para cualquier consulta, puedes contactarme a través de [mi correo electrónico](mailto:garciadiazluis23@gmail.com).
+
+*Este proyecto fue creado para un proyecto de ciberseguridad para mi escuela STEM.*
