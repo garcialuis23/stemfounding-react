@@ -1,0 +1,89 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px; 
+}
+
+html, body {
+  height: 100%; /* Ensure html and body take full height */
+}
+
+body {
+  background-color: #FBF5E9; /* Fondo principal de la página */
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  height: 100%; /* Ensure body takes full height */
+}
+
+/* Colors */
+:root {
+  --primary: #A17851;  /* Color principal */
+  --secondary: #8F6E42;  /* Segundo color */
+  --accent: #D9C092;  /* Color de acento */
+  --light: #F2E4C8;  /* Color claro */
+  --dark: #3E2A47;  /* Color oscuro */
+}
+
+/* Links */
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  color: #8C5E3A; /* Adjusted hover color */
+}
+
+/* Backgrounds */
+.bg-light {
+  background-color: #FBF5E9; /* Fondo claro */
+}
+
+.bg-dark {
+  background-color: #3E2A47; /* Fondo oscuro */
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--light);
+}
+
+.btn-primary:hover {
+  background-color: #8C5E3A; /* Adjusted hover color */
+  border-color: #8C5E3A; /* Adjusted hover color */
+  color: var(--light);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--light);
+}
+
+.btn-secondary:hover {
+  background-color: #7A5A36; /* Adjusted hover color */
+  border-color: #7A5A36; /* Adjusted hover color */
+  color: var(--light);
+}
+
+/* Additional styles for card borders */
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.border-danger {
+  border-color: #dc3545 !important;
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+/* Estilo personalizado para la barra de progreso */
+.progress-bar.bg-brown {
+  background-color: #8B4513; /* Marrón */
+}
