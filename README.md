@@ -137,4 +137,4 @@ Para cualquier consulta, puedes contactarme a través de [mi correo electrónico
 
 ---
 
-*Este proyecto fue creado para un proyecto de ciberseguridad para mi escuela STEM.*
+*Este proyecto fue creado para un proyecto para mi escuela STEM.*
